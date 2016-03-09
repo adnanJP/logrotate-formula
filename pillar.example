@@ -3,6 +3,10 @@ logrotate:
   lookup:
     pkg: logrotate
     service: crond
+  config:
+    template: salt://logrotate/files/production.conf
+    frequency: weekly
+    rotate: 52
   jobs:
       /tmp/var/log/mysql/error:
       config:
